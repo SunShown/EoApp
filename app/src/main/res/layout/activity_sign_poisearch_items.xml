@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/activity_sign_main_backgroud">
+
+    <RelativeLayout
+        android:id="@+id/items_linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="65dp">
+
+        <TextView
+            android:id="@+id/firstPara"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="8dp"
+            android:text="参数一"
+            android:textColor="@color/grey_text_address"
+            android:textSize="16dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/secondPara"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/firstPara"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="8dp"
+            android:text="参数二"
+            android:textColor="@color/grey_text_address"
+            android:textSize="12dp"/>
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/strip_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/items_linearlayout"
+        android:background="@color/common_bottom_bar_selected_bg"/>
+</RelativeLayout>

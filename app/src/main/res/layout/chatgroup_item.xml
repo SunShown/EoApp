@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <com.liu.easyoffice.ChatGroupUtils.CircularImageView
+            android:layout_centerVertical="true"
+            android:src="@mipmap/emotion_003"
+            android:id="@+id/chatgroup_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_toRightOf="@id/chatgroup_iv"
+            android:layout_centerVertical="true"
+            android:id="@+id/chatgroup_tv_name"
+            android:layout_marginLeft="10dp"
+            android:textColor="@android:color/black"
+
+            android:ellipsize="end"
+            android:maxEms="8"
+            android:lines="1"
+            android:textSize="22sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_toRightOf="@id/chatgroup_tv_name"
+            android:layout_marginLeft="1dp"
+            android:layout_centerVertical="true"
+            android:id="@+id/chatgroup_tv_count"
+            android:text="(23)"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</LinearLayout>

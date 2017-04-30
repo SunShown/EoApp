@@ -1,0 +1,217 @@
+<resources>
+
+    <style name="bottom_rg">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:button">@null</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:textColor">@drawable/rbtn_text</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--状态栏颜色-->
+        <item name="colorPrimaryDark">@color/toolbar_blue</item>
+        <!--Toolbar颜色-->
+        <item name="colorPrimary">@color/toolbar_blue</item>
+        <!--返回键样式-->
+        <item name="drawerArrowStyle">@style/AppTheme.DrawerArrowToggle</item>
+    </style>
+
+    <style name="AppTheme.DrawerArrowToggle" parent="Base.Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@android:color/white</item>
+    </style>
+    <!--广告轮播是下面按钮样式-->
+    <style name="msg_lunbo_rbtn">
+        <item name="android:layout_height">@dimen/msg_lunbo_rbtn_width</item>
+        <item name="android:layout_width">@dimen/msg_lunbo_rbtn_width</item>
+        <item name="android:clickable">false</item>
+        <item name="android:background">@drawable/msg_lunbo_rbtn_style</item>
+        <item name="android:button">@null</item>
+        <item name="android:layout_margin">5dp</item>
+    </style>
+
+    <style name="grid">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:numColumns">3</item>
+        <item name="android:horizontalSpacing">@dimen/work_grid_space</item>
+        <item name="android:verticalSpacing">@dimen/work_grid_space</item>
+    </style>
+
+    <style name="apply_main_rbtn">
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">130dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:button">@null</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:textColor">@color/work_grid_item_bg</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="work_title_main">
+        <item name="android:layout_height">@dimen/work_title_height</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+    <style name="work_title_img">
+        <!--<item name="android:src">@mipmap/back</item>-->
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginLeft">25dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="work_title_img_right">
+        <!--<item name="android:src">@mipmap/enter</item>-->
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginRight">10dp</item>
+    </style>
+    <style name="work_title_text">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">@dimen/work_title_textSize</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:textColor">@color/work_grid_item_bg</item>
+    </style>
+    <!--每个页面的顶部-->
+    <style name="activity_main_title">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/choose_contacts_choosed_list_height</item>
+        <item name="android:background">@color/activity_main_title</item>
+    </style>
+    <style name="activity_main_title_back">
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginLeft">@dimen/back_marginLeft</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:src">@mipmap/back</item>
+    </style>
+    <style name="activity_main_title_title">
+        <item name="android:textColor">@color/activity_main_title_textColor</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:textSize">@dimen/activity_main_title_textSize</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="radiotab_shenpi" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <!-- Customize your theme here. -->
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@color/shenpi_nomal</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:textColor">@drawable/text_color_press_ishenpi_selector</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:padding">5dp</item>
+
+    </style>
+    <style name="radiotab_shenpiinfo" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <!-- Customize your theme here. -->
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/listview_item_bg_color_selector</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@drawable/text_color_press_ishenpiinfo_selector</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">15dp</item>
+
+
+
+    </style>
+
+    <style name="manager_team_bottom_btn">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/manager_team_bottom_text</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <!--确认按钮样式-->
+    <style name="confirm_btn_style">
+        <item name="android:background">@drawable/confirm_style</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_width">60dp</item>
+    </style>
+
+    <style name="edit_layout">
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:background">@android:color/white</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+    <style name="edit_tv_title">
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/deep_black</item>
+    </style>
+    <style name="edit_et_name">
+        <item name="android:lines">1</item>
+        <item name="android:maxLength">18</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@null</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="edit_iv_delete">
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_width">16dp</item>
+        <item name="android:layout_height">16dp</item>
+    </style>
+
+    <style name="confirm_btn_bottom">
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@drawable/chat_group_btn_quit</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="addMember_dialog_item">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@drawable/border_bottom_grey</item>
+    </style>
+    <style name="AnimBottom" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
+    </style>
+    <style name="customTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/toolbar_blue</item>//标题栏背景色
+        <item name="colorPrimaryDark">@color/toolbar_blue</item>
+    </style>
+
+
+    <!--签到界面-->
+
+
+</resources>

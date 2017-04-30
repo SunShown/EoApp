@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/sign_confirm_grey">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true">
+
+        <RelativeLayout
+            android:id="@+id/sign_setting_in_scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true">
+
+            <TextView
+                android:id="@+id/setting_content1"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:gravity="center_vertical"
+                android:text="对考勤组的考勤规则进行设置"/>
+
+            <RelativeLayout
+                android:id="@+id/checking_time_relativelayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/setting_content1"
+                android:background="@color/activity_sign_main_backgroud">
+
+                <TextView
+                    android:id="@+id/checking_time_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="考勤时间"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    />
+
+                <ImageView
+                    android:id="@+id/right_point"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/right_point"/>
+
+                <TextView
+                    android:id="@+id/schedule_weekly1"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/checking_time_textview"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:text="请点击选择上班日期及休息日期"/>
+
+                <TextView
+                    android:id="@+id/schedule_weekly2"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/schedule_weekly1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/setting_content2"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@+id/checking_time_relativelayout"
+                android:gravity="center_vertical"
+                android:text="设置考勤组的考勤地点"/>
+
+            <RelativeLayout
+                android:id="@+id/checking_address_relativelayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/setting_content2"
+                android:background="@color/activity_sign_main_backgroud">
+
+                <ImageView
+                    android:id="@+id/image_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/build"/>
+
+                <TextView
+                    android:id="@+id/address_title1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/image_address"
+                    android:text="将整个办公楼设为考勤范围"/>
+
+                <TextView
+                    android:id="@+id/address_title2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/address_title1"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/image_address"
+                    android:text="通过手机定位，精确到50-300米的定位方式"/>
+
+                <View
+                    android:id="@+id/strip_line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="3px"
+                    android:layout_below="@+id/image_address"
+                    android:background="#C0C5C7"/>
+
+                <RelativeLayout
+                    android:id="@+id/addaddress_relativelayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/strip_line1">
+
+                    <ImageView
+                        android:id="@+id/addaddress_imageview"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/addaddress"/>
+
+                    <TextView
+                        android:id="@+id/addaddress_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/addaddress_imageview"
+                        android:gravity="center_vertical"
+                        android:text="添加办公地点"
+                        android:textColor="@color/green"
+                        android:textSize="18sp"/>
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/strip_line6"
+                    android:layout_width="match_parent"
+                    android:layout_height="3px"
+                    android:layout_below="@+id/addaddress_relativelayout"
+                    android:background="#C0C5C7"
+                    android:visibility="gone"/>
+
+                <RelativeLayout
+                    android:id="@+id/addAddress_details_relativelayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:layout_below="@+id/addaddress_relativelayout"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/firstPara"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="8dp"
+                        android:text="参数一"
+                        android:textColor="@color/grey_text_address"
+                        android:textSize="16dp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/secondPara"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/firstPara"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="8dp"
+                        android:text="参数二"
+                        android:textColor="@color/grey_text_address"
+                        android:textSize="12dp"/>
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/strip_line2"
+                    android:layout_width="match_parent"
+                    android:layout_height="3px"
+                    android:layout_below="@+id/addAddress_details_relativelayout"
+                    android:background="#C0C5C7"/>
+
+                <RelativeLayout
+                    android:id="@+id/select_distance_relativelayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/strip_line2">
+
+                    <TextView
+                        android:id="@+id/select_distance_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:text="选择有效范围"
+                        android:textSize="18sp"/>
+
+                    <ImageView
+                        android:id="@+id/motify_distance_imageview"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/motify_distance"/>
+
+                    <TextView
+                        android:id="@+id/after_motify_distance_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/motify_distance_imageview"
+                        android:layout_marginRight="10dp"
+                        android:layout_toLeftOf="@+id/motify_distance_imageview"
+                        android:text="关闭"
+                        android:textSize="18sp"/>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/setting_content3"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@+id/checking_address_relativelayout"
+                android:gravity="center_vertical"
+                android:text="设置弹性时间、迟到时间以及旷工时间"/>
+
+            <RelativeLayout
+                android:id="@+id/setting_relevant_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/setting_content3"
+                android:background="@color/activity_sign_main_backgroud">
+
+                <RelativeLayout
+                    android:id="@+id/setting_elasticity_time_relativelayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <TextView
+                        android:id="@+id/setting_elasticity_time_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:text="设置上班弹性时间"
+                        android:textSize="18sp"/>
+
+                    <ImageView
+                        android:id="@+id/setting_elasticity_time_imagview"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/right_point"/>
+
+                    <TextView
+                        android:id="@+id/elasticity_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/setting_elasticity_time_textview"
+                        android:layout_toLeftOf="@+id/setting_elasticity_time_imagview"
+                        android:text="关闭"
+                        android:textSize="18sp"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/strip_line3"
+                    android:layout_width="match_parent"
+                    android:layout_height="3px"
+                    android:layout_below="@+id/setting_elasticity_time_relativelayout"
+                    android:background="#C0C5C7"/>
+
+                <RelativeLayout
+                    android:id="@+id/setting_late_time_relativelayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/strip_line3"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/setting_late_time_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:text="设置迟到及旷工"
+                        android:textSize="18sp"/>
+
+                    <ImageView
+                        android:id="@+id/setting_late_time_imagview"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/right_point"/>
+
+                    <TextView
+                        android:id="@+id/late_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/setting_late_time_textview"
+                        android:layout_toLeftOf="@+id/setting_late_time_imagview"
+                        android:text="关闭"
+                        android:textSize="18sp"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/strip_line4"
+                    android:layout_width="match_parent"
+                    android:layout_height="3px"
+                    android:layout_below="@+id/setting_elasticity_time_relativelayout"
+                    android:background="#C0C5C7"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/setting_content4"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@+id/setting_relevant_time"
+                android:gravity="center_vertical"
+                android:text="规定打卡提前时间"/>
+
+
+            <RelativeLayout
+                android:id="@+id/setting_ahead_time_relativelayout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/setting_content4"
+                android:background="@color/activity_sign_main_backgroud">
+
+                <TextView
+                    android:id="@+id/setting_ahead_time_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="设置上班打卡的最早时间"
+                    android:textSize="18sp"/>
+
+                <ImageView
+                    android:id="@+id/setting_ahead_time_imagview"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/right_point"/>
+
+                <TextView
+                    android:id="@+id/ahead_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/setting_ahead_time_textview"
+                    android:layout_toLeftOf="@+id/setting_ahead_time_imagview"
+                    android:text="关闭"
+                    android:textSize="18sp"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/setting_content5"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@+id/setting_ahead_time_relativelayout"
+                android:gravity="center_vertical"
+                android:text="设置上下班打卡提醒"/>
+
+
+            <RelativeLayout
+                android:id="@+id/setting_remind_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/setting_content5"
+                android:background="@color/activity_sign_main_backgroud">
+
+                <RelativeLayout
+                    android:id="@+id/setting_on_remind_time_relativelayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <TextView
+                        android:id="@+id/setting_on_remind_time_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:text="设置上班提醒"
+                        android:textSize="18sp"/>
+
+                    <ImageView
+                        android:id="@+id/setting_on_remind_time_imagview"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/right_point"/>
+
+                    <TextView
+                        android:id="@+id/on_remind_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/setting_on_remind_time_textview"
+                        android:layout_toLeftOf="@+id/setting_on_remind_time_imagview"
+                        android:text="关闭"
+                        android:textSize="18sp"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/strip_line5"
+                    android:layout_width="match_parent"
+                    android:layout_height="3px"
+                    android:layout_below="@+id/setting_on_remind_time_relativelayout"
+                    android:background="#C0C5C7"/>
+
+                <RelativeLayout
+                    android:id="@+id/setting_off_remind_time_relativelayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/strip_line5">
+
+                    <TextView
+                        android:id="@+id/setting_off_remind_time_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:text="设置下班提醒"
+                        android:textSize="18sp"/>
+
+                    <ImageView
+                        android:id="@+id/setting_off_remind_time_imagview"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/right_point"/>
+
+                    <TextView
+                        android:id="@+id/off_remind_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/setting_off_remind_time_textview"
+                        android:layout_toLeftOf="@+id/setting_off_remind_time_imagview"
+                        android:text="关闭"
+                        android:textSize="18sp"/>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/setting_content6"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@+id/setting_remind_time"
+                android:gravity="center_vertical"
+                android:text="设置登上勤奋榜的平均工作时长"/>
+
+
+            <RelativeLayout
+                android:id="@+id/hardworking_relativelayout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/setting_content6"
+                android:background="@color/activity_sign_main_backgroud">
+
+                <TextView
+                    android:id="@+id/hardingworking_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="设置上榜月均工作时长"
+                    android:textSize="18sp"/>
+
+
+                <ImageView
+                    android:id="@+id/hardworking_imagview"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/right_point"/>
+
+                <TextView
+                    android:id="@+id/hardworkingCheckingTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/hardingworking_textview"
+                    android:layout_toLeftOf="@+id/hardworking_imagview"
+                    android:text="关闭"
+                    android:textSize="18sp"/>
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/setting_content7"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@+id/hardworking_relativelayout"
+                android:gravity="center_vertical"
+                android:text="设置考勤开始时间(默认下周开始)"/>
+
+
+            <RelativeLayout
+                android:id="@+id/nextDayorWeek_relativelayout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/setting_content7"
+                android:background="@color/activity_sign_main_backgroud">
+
+                <TextView
+                    android:id="@+id/autoTextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center_vertical"
+                    android:text="设置明天开始打卡考勤"
+                    android:textSize="18sp"/>
+
+                <ImageView
+                    android:id="@+id/autoNextDayToggle"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/selectweek"/>
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/sign_setting_end1"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_below="@+id/nextDayorWeek_relativelayout">
+            </TextView>
+
+            <Button
+                android:id="@+id/commit"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_below="@+id/sign_setting_end1"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:background="@drawable/sign_button"
+                android:text="保存"
+                android:textColor="@color/sign_toolbar"/>
+
+            <TextView
+                android:id="@+id/sign_setting_end2"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_below="@+id/commit">
+            </TextView>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

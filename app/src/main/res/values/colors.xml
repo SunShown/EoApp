@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <!--底部字体颜色-->
+    <color name="bottom_rbtn_text_click">#33bcda</color>
+    <color name="bottom_rbtn_text_normal">#a9b7b7</color>
+    <color name="toolbar_blue">#0c8fe9</color>
+    <color name="Indigo_colorPrimaryDark">#303f9f</color>
+    <color name="Indigo_colorPrimary">#3f51b5</color>
+    <color name="Indigo_nav_color">#008BED</color>
+    <color name="fail_load_text_color">#1296db</color>
+
+    <color name="work_grid_icon_textColor">#000</color>
+    <color name="work_grid_bg">#ccc</color>
+    <color name="work_grid_item_bg">#fff</color>
+    <color name="apply_text_unfinished">#fa1c0c</color>
+    <color name="woman_bg_color">#ff5586</color>
+    <!--选择好的联系人列表样式-->
+    <color name="choosed_contacts_bg">#f9f9f9</color>
+    <!--每个title的背景色-->
+    <color name="activity_main_title">#0195ff</color>
+     <color name="searchbarnomal">#e0e0e0</color>
+    <color name="shenpi_nomal">#f9f9f9</color>
+    <color name="lv_item_nomal">#ffffff</color>
+    <color name="lv_item_press">#e7e7e7</color>
+    <!--每个title的字体颜色-->
+    <color name="activity_main_title_textColor">#e4e4e4</color>
+    <color name="deep_grey">#A7A7A7</color>
+    <color name="grey">#e7e7e7</color>
+    <color name="ldeep_grey">#8f8f8f</color>
+    <color name="red">#FFC93437</color>
+    <color name="blue">#FF375BF1</color>
+    <color name="yellow">#FFF7D23E</color>
+    <color name="green">#FF34A350</color>
+
+
+
+
+    <!--签到颜色大全-->
+    <color name="sign_toolbar">#000000</color>
+    <color name="activity_sign_main_backgroud">#ffffff</color>
+    <color name="sign_confirm_grey">#ccc</color>
+    <color name="bottom_bar_normal_bg">#2D2F31</color>
+    <color name="common_bottom_bar_normal_bg">#2d2f31</color>
+    <color name="common_bottom_bar_selected_bg">#161718</color>
+    <color name="green_me">#008000</color>
+    <color name="mediumaquamarine">#19cccf</color><!--中绿色 -->
+    <color name="grey_select_address">#e6e4e4</color>
+    <color name="grey_text_address">#666</color>
+    <color name="grey_bg_choosed">#dbdada</color>
+
+
+    <color name="de_blue">#0288d1</color>
+    <color name="de_blue_clicked">#56AAE3</color>
+<color name="approve_agree_green">#75c813</color>
+    <color name="approve_notagree_gray">#ccc</color>
+    <color name="bg_main">#f0eff4</color>
+    <color name="quit_btn">#fc6156</color>
+
+    <color name="deep_blue">#72A2EF</color>
+    <color name="light_blue">#97B4CC</color>
+
+    <color name="deep_black">#2A2A2A</color>
+    <color name="img_back_bg_nomal">#404040</color>
+    <color name="img_back_bg_pressed">#101010</color>
+
+    <!--没网络点击按钮-->
+    <color name="nonet_normal">#F7F7F7</color>
+    <color name="nonet_press">#D1D1D1</color>
+    <color name="nonet_border">#fe5d7c</color>
+    
+</resources>

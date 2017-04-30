@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_get_ishen_pi"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.liu.easyoffice.Activity.GetIshenPiActivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/Ishenpi_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/toolbar_blue"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tv_shenpi_back"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="0dp"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:drawableLeft="@mipmap/shenpi_fanhui"
+                android:textColor="#fff"
+                android:text="返回"
+                android:textSize="20dp"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:text="我审批的"
+                android:textSize="20dp"
+                />
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+    <RelativeLayout
+    android:layout_below="@id/Ishenpi_toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+
+        <RadioGroup
+            android:id="@+id/rg_tab_shenpi"
+           android:background="@color/shenpi_nomal"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <RadioButton
+                android:id="@+id/rb_ishenpi1"
+                android:text="待我审批的"
+
+                style="@style/radiotab_shenpi"
+    />
+
+            <RadioButton
+                android:id="@+id/rb_ishenpi2"
+                android:text="我已审批的"
+
+                style="@style/radiotab_shenpi" />
+
+        </RadioGroup>
+
+        <View
+            android:layout_below="@id/rg_tab_shenpi"
+            android:layout_width="match_parent"
+            android:id="@+id/v_shenpi_line"
+            android:layout_height="1px"
+            android:background="@color/bottom_rbtn_text_normal"/>
+        <FrameLayout
+            android:layout_below="@id/v_shenpi_line"
+            android:id="@+id/fy_Ishenpi"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></FrameLayout>
+    </RelativeLayout>
+
+
+</RelativeLayout>

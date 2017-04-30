@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.liu.easyoffice">
+
+    <!-- 用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 用于访问网络，网络定位需要上网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入缓存定位数据 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".Application.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="me.iwf.photopicker.PhotoPickerActivity"
+            android:theme="@style/customTheme" />
+
+        <service android:name="com.amap.api.location.APSService" />
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="0f70168ca94dbe2e0b1725798f58383e" />
+
+        <activity android:name=".Activity.MainActivity"
+            android:launchMode="singleTask"
+            >
+            <data
+                android:host="com.liu.easyoffice"
+                android:pathPrefix="/conversationlist"
+                android:scheme="rong" />
+        </activity>
+        <activity android:name=".Activity.ApplymentActivity" />
+        <activity
+            android:name=".Activity.GetIshenPiActivity"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:name=".Activity.ApplyAcitity" />
+        <activity
+            android:name=".Activity.MyApplyActivity"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:name=".Activity.PersonalInformationActivity" />
+        <activity android:name=".Activity.ImgActivity" />
+        <activity
+            android:name=".Activity.ConversationActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="com.liu.easyoffice"
+                    android:pathPrefix="/conversation/"
+                    android:scheme="rong" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.ContactMsgActivity" />
+        <activity android:name=".Activity.CreateGroup" />
+        <activity android:name=".Activity.SearchMember" />
+        <activity
+            android:name=".Activity.ChatGroupActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".Activity.ShowMemberActivity" />
+
+        <activity android:name=".Activity.LeaderActivity" />
+        <activity
+            android:name=".Activity.Login2Activity"
+            android:launchMode="singleTask" />
+
+        <activity android:name=".Activity.SignConfirmActivity" />
+        <activity android:name=".Activity.SignMainActivity" />
+        <activity android:name=".Activity.SignRankingListActivity" />
+        <activity android:name=".Activity.SignAddressAdjustment" />
+        <activity android:name=".Activity.GroupMsgActivity" />
+        <activity android:name=".Activity.SetChatGroupName" />
+        <activity
+            android:name=".Activity.ApproveinfoActivity"
+            android:windowSoftInputMode="stateAlwaysHidden"></activity>
+        <activity android:name=".Activity.ManagerPart.ManagerTeam" />
+        <activity android:name=".Activity.ManagerPart.TelContactsActivity" />
+        <activity android:name=".Activity.SettingActivity" />
+        <activity android:name=".Activity.ModifyPwdActivity" />
+        <activity android:name=".Activity.ApproveDecisonActivity" />
+
+
+        <receiver
+            android:name=".BroadCast.MyBroadCastreciver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="com.liu.easyoffice.approveinfoupdate" />
+            </intent-filter>
+            <intent-filter>
+
+                <!-- Required 用户注册SDK的intent -->
+                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+                <!-- Required 用户接收SDK消息的intent -->
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+                <!-- Required 用户接收SDK通知栏信息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <!-- Required 用户打开自定义通知栏的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+                <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <action android:name="cn.jpush.android.intent.CONNECTION" />
+
+                <category android:name="com.liu.easyoffice" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".Activity.CreateCompany"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
+        <activity android:name=".Activity.ManagerPart.AllDepActivity" />
+        <activity android:name=".Activity.ManagerPart.DepLeaderActivity" />
+        <activity android:name=".Activity.AnnouncementActivity" />
+        <activity android:name=".Activity.SendAnnouncementActivity" />
+        <activity android:name=".Activity.AnnouncementShowActivity" />
+        <activity android:name=".Activity.IndexActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+
+        <activity android:name=".Activity.SignWeekAndTimeByAdminActivity">
+        </activity>
+        <activity android:name=".Activity.SignExportCheckingTableActivity">
+
+        </activity>
+
+        <receiver
+            android:name=".BroadCast.MyBroadCast"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+
+                <category android:name="com.liu.easyoffice" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".Activity.MyCompany" />
+        <activity android:name=".Activity.AboutActivity" />
+        <activity android:name=".Activity.AdviseForReturn"></activity>
+
+        <activity android:name=".Activity.ApproveConfigActivity"></activity>
+
+
+        <service android:name=".Service.MyService" />
+
+        <activity android:name=".Activity.ManagerPart.MemberEditActivity"></activity>
+
+    </application>
+
+</manifest>

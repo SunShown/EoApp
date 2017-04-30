@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:visibility="gone"
+    android:orientation="vertical"
+    android:background="@mipmap/nonet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    >
+    <Button
+        android:layout_marginTop="25dp"
+        android:layout_centerInParent="true"
+        android:textColor="@color/nonet_border"
+        android:text="再试试"
+        android:background="@drawable/no_net_btn"
+        android:layout_width="100dp"
+        android:layout_height="40dp" />
+</LinearLayout>

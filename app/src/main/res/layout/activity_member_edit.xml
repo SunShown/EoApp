@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_member_edit"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    tools:context="com.liu.easyoffice.Activity.ManagerPart.MemberEditActivity">
+    <com.liu.easyoffice.MyView.MyTitleBar
+        android:id="@+id/manager_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:leftImagResource="@mipmap/back"
+        app:text="编辑员工"
+        >
+    </com.liu.easyoffice.MyView.MyTitleBar>
+    <LinearLayout
+        android:layout_below="@id/manager_title"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+    </LinearLayout>
+</RelativeLayout>

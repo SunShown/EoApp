@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/Ishenpi_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/toolbar_blue"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tv_shenpii_back"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="0dp"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:drawableLeft="@mipmap/shenpi_fanhui"
+                android:textColor="#fff"
+                android:text="返回"
+                android:textSize="20dp"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:text="我申请的"
+                android:textSize="20dp"
+                />
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+    <com.liu.easyoffice.MyView.MySearchBar
+        android:id="@+id/sb_ishen"
+
+        android:layout_width="match_parent"
+        android:layout_below="@id/Ishenpi_toolbar"
+        android:layout_height="wrap_content"></com.liu.easyoffice.MyView.MySearchBar>
+    <!--<com.tuesda.walker.circlerefresh.CircleRefreshLayout-->
+        <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+        <!--app:AniBackColor="@color/Indigo_nav_color"-->
+        <!--app:AniForeColor="#ffffffff"-->
+        <!--app:CircleSmaller="6"-->
+        <!--android:id="@+id/refresh_layout"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+        <!--<ListView-->
+            <!--android:background="#ffffffff"-->
+            <!--android:id="@+id/list"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"></ListView>-->
+    <!--</com.tuesda.walker.circlerefresh.CircleRefreshLayout>-->
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/apply_myapply_lv"
+        android:layout_below="@id/sb_ishen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+    
+         
+        ptr:ptrHeaderTextColor="#505050"
+        ptr:ptrDrawable="@mipmap/refresh_ic"
+        ptr:ptrListViewExtrasEnabled="true"
+
+       />
+
+</RelativeLayout>

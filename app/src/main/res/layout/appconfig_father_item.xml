@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff">
+    <ImageView
+       android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/iv_appcon_fa"
+        android:layout_width="40dp"
+        android:background="@mipmap/icon_approve_qingjia"
+        android:layout_height="40dp" />
+    <TextView
+
+       android:id="@+id/tv_appcon_fa"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/iv_appcon_fa"
+        android:layout_width="wrap_content"
+        android:text="请假"
+        android:textSize="20sp"
+        android:layout_height="wrap_content" />
+<ImageView
+    android:layout_alignParentRight="true"
+    android:layout_centerVertical="true"
+    android:layout_marginRight="10dp"
+    android:layout_width="30dp"
+    android:id="@+id/iv_appcon_fa_jiantou"
+    android:background="@mipmap/enter"
+    android:layout_height="30dp" />
+
+
+
+
+</RelativeLayout>

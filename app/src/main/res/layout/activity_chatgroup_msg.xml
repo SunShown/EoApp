@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bar="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_group_msg"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.liu.easyoffice.Activity.GroupMsgActivity">
+    <com.liu.easyoffice.MyView.MyTitleBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        bar:leftImagResource="@mipmap/back"
+        bar:showLeftImag="true"
+        bar:text="讨论组设置"
+        >
+    </com.liu.easyoffice.MyView.MyTitleBar>
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:id="@+id/chatgroup_rlt_groupName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+                <TextView
+                    android:textSize="18sp"
+                    android:id="@+id/chatgroup_msg_tv_groupName"
+                    android:layout_centerVertical="true"
+                    android:text="讨论组名称"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:textSize="16sp"
+                    android:id="@+id/chatgroup_msg_et_groupName"
+                    android:gravity="end"
+
+                    android:layout_toRightOf="@id/chatgroup_msg_tv_groupName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="50dp">
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:text="创建时间"
+                    android:textSize="18sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/chatgroup_msg_tv_createTime"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black"
+                    android:layout_centerVertical="true"
+                    android:text=""
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <TextView
+                    android:textSize="18sp"
+                    android:text="成员列表:"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <com.liu.easyoffice.MyView.MyGridView
+                    android:background="@color/lv_item_press"
+                    android:numColumns="4"
+                    android:id="@+id/chatgroup_gv_members"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </com.liu.easyoffice.MyView.MyGridView>
+            </LinearLayout>
+            <Button
+                android:layout_marginTop="10dp"
+                android:id="@+id/chatgroup_btn_quit"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:text="退出讨论组"
+                android:textColor="@android:color/white"
+                android:background="@drawable/chat_group_btn_quit"
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

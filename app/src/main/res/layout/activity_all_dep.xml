@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_all_dep"
+    android:background="@color/grey"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.liu.easyoffice.Activity.ManagerPart.AllDepActivity">
+    <com.liu.easyoffice.MyView.MyTitleBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:leftImagResource="@mipmap/back"
+        app:text="选择上级部门"
+        >
+    </com.liu.easyoffice.MyView.MyTitleBar>
+    <HorizontalScrollView
+
+        android:paddingLeft="25dp"
+        style="@style/edit_layout"
+        >
+        <LinearLayout
+            android:animateLayoutChanges="true"
+            android:orientation="horizontal"
+            android:id="@+id/all_dep_lyt"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+        </LinearLayout>
+    </HorizontalScrollView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+
+            android:layout_marginTop="20dp"
+            android:id="@+id/all_dep_lv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </ListView>
+        <ImageView
+            android:visibility="gone"
+            android:src="@drawable/load_date"
+            android:layout_centerInParent="true"
+            android:scaleType="center"
+            android:id="@+id/all_dep_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <include
+            android:visibility="gone"
+            android:id="@+id/all_dep_nodate"
+            layout="@layout/no_date_layout"/>
+        <include
+            android:visibility="gone"
+            android:id="@+id/all_dep_nonet"
+            layout="@layout/no_net"
+            />
+    </RelativeLayout>
+</LinearLayout>

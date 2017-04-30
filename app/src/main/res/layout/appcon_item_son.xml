@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+
+    <RelativeLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:id="@+id/ll_appcon_son"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="大于"
+        android:layout_marginRight="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+android:id="@+id/tv_con_dayu"
+            android:textSize="18sp"
+            android:textColor="#ccc"/>
+        <EditText
+            android:id="@+id/et_appcon_limit"
+            android:layout_toRightOf="@id/tv_con_dayu"
+            android:layout_width="30dp"
+             android:layout_centerVertical="true"
+            android:layout_height="20dp"
+            android:textSize="18sp"
+
+            />
+        <TextView
+            android:text="天时"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/et_appcon_limit"
+            android:textSize="18sp"
+            android:textColor="#ccc"
+            android:id="@+id/tv_app_con_danwei"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+<ImageView
+   android:layout_alignParentRight="true"
+    android:layout_centerVertical="true"
+    android:layout_marginRight="30dp"
+    android:background="@mipmap/jianhao"
+    android:id="@+id/iv_appcon_jianhao"
+    android:layout_width="24dp"
+    android:layout_height="24dp" />
+    </RelativeLayout>
+    <com.liu.easyoffice.MyView.NoScrollGridView
+        android:layout_margin="10dp"
+        android:layout_below="@id/ll_appcon_son"
+        android:numColumns="4"
+        android:id="@+id/gv_appcon_gd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </com.liu.easyoffice.MyView.NoScrollGridView>
+</RelativeLayout>

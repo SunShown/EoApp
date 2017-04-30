@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_leader"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.liu.easyoffice.Activity.LeaderActivity">
+    <com.liu.easyoffice.MyView.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CCC"
+        android:id="@+id/vp"
+        />
+
+    <Button
+        android:id="@+id/btn_tiaoguo"
+        android:layout_gravity="top|right"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="15dp"
+        android:textColor="#FFF"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:visibility="visible"
+        android:background="@drawable/button_style2"
+        android:text="跳 过"/>
+
+    <Button
+        android:id="@+id/leader_enter"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:background="@drawable/button_style"
+        android:layout_gravity="bottom|center_horizontal"
+        android:textSize="30px"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="马上进入"
+        android:typeface="serif"
+        android:textColor="@color/toolbar_blue"
+        android:layout_marginBottom="35dp"
+        android:visibility="gone"
+        />
+</FrameLayout>

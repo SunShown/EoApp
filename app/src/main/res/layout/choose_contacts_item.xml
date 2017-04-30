@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <ImageView
+            android:layout_marginLeft="6dp"
+            android:scaleType="fitCenter"
+            android:id="@+id/choose_contacts_item_iv_checked"
+            android:src="@mipmap/choose_checked"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_width="18dp"
+            android:layout_height="18dp" />
+        <CheckBox
+            android:layout_centerVertical="true"
+            android:id="@+id/choose_contacts_item_cb"
+            android:focusable="false"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_marginLeft="34dp"
+            android:id="@+id/choose_contacts_item_iv"
+            android:src="@mipmap/emotion_003"
+            android:layout_width="42dp"
+            android:layout_height="42dp" />
+        <TextView
+
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/rc_location_text"
+            android:layout_toRightOf="@id/choose_contacts_item_iv"
+            android:id="@+id/choose_contacts_item_name"
+            android:textSize="20sp"
+            android:text="姓名"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/choose_contacts_item_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/choose_contacts_item_imgUrl"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</RelativeLayout>

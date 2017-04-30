@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_tel_contacts"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.liu.easyoffice.Activity.ManagerPart.TelContactsActivity">
+    <com.liu.easyoffice.MyView.MyTitleBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:leftImagResource="@mipmap/back"
+        app:text="添加联系人"
+        >
+    </com.liu.easyoffice.MyView.MyTitleBar>
+    <ListView
+        android:background="@color/grey"
+        android:id="@+id/tel_contacts_lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></ListView>
+</LinearLayout>

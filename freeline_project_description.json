@@ -1,0 +1,210 @@
+{
+    "android_gradle_plugin_version": "2.3.1",
+    "apk_path": "E:\\bishe\\workspace\\EOApp\\app\\build\\outputs\\apk\\app-debug.apk",
+    "apt": {
+        
+    },
+    "apt_libraries": {
+        "dagger": false,
+        "butterknife": false
+    },
+    "auto_dependency": true,
+    "build_cache_dir": "E:\\bishe\\workspace\\EOApp\\app\\build\\freeline",
+    "build_directory": "E:\\bishe\\workspace\\EOApp\\app\\build",
+    "build_script": "gradlew.bat :app:assembleDebug",
+    "build_script_work_directory": "",
+    "build_tools_directory": "C:\\softwares\\sdk\\build-tools\\25.0.0",
+    "build_tools_version": "25.0.0",
+    "check_sources_md5": [
+        
+    ],
+    "compile_sdk_directory": "C:\\softwares\\sdk\\platforms\\android-23",
+    "compile_sdk_version": "android-23",
+    "databinding": [
+        
+    ],
+    "databinding_compiler_jar": "",
+    "databinding_modules": [
+        
+    ],
+    "debug_package": "com.liu.easyoffice",
+    "exclude_dep_res_paths": [
+        
+    ],
+    "extra_dep_res_paths": [
+        
+    ],
+    "freeline_cache_dir": "E:\\bishe\\workspace\\EOApp",
+    "freeline_gradle_plugin_version": "0.8.7",
+    "ignore_resource_ids": [
+        "avd_hide_password_1",
+        "avd_hide_password_2",
+        "avd_hide_password_3",
+        "avd_show_password_1",
+        "avd_show_password_2",
+        "avd_show_password_3"
+    ],
+    "java_home": "C:\\Program Files\\Java\\jdk1.8.0_121",
+    "launcher": "com.liu.easyoffice.Activity.IndexActivity",
+    "main_assets_directory": [
+        "E:\\bishe\\workspace\\EOApp\\app\\src\\debug\\assets",
+        "E:\\bishe\\workspace\\EOApp\\app\\src\\main\\assets"
+    ],
+    "main_jniLibs_directory": [
+        "E:\\bishe\\workspace\\EOApp\\app\\src\\debug\\jniLibs",
+        "E:\\bishe\\workspace\\EOApp\\app\\libs"
+    ],
+    "main_jni_directory": [
+        "E:\\bishe\\workspace\\EOApp\\app\\src\\debug\\jni",
+        "E:\\bishe\\workspace\\EOApp\\app\\src\\main\\jni"
+    ],
+    "main_manifest_path": "E:\\bishe\\workspace\\EOApp\\app\\src\\main\\AndroidManifest.xml",
+    "main_project_dir": "app",
+    "main_project_name": "app",
+    "main_r_path": "E:\\bishe\\workspace\\EOApp\\app\\build\\generated\\source\\r\\debug\\R.java",
+    "main_res_directory": [
+        "E:\\bishe\\workspace\\EOApp\\app\\src\\debug\\res",
+        "E:\\bishe\\workspace\\EOApp\\app\\src\\main\\res"
+    ],
+    "main_src_directory": [
+        "E:\\bishe\\workspace\\EOApp\\app\\src\\debug\\java",
+        "E:\\bishe\\workspace\\EOApp\\app\\src\\main\\java"
+    ],
+    "module_dependencies": {
+        "IMkit": [
+            
+        ],
+        "app": [
+            "IMkit",
+            "timeselector",
+            "library"
+        ],
+        "library": [
+            
+        ],
+        "timeselector": [
+            
+        ]
+    },
+    "modules": [
+        {
+            "name": "app",
+            "path": "E:\\bishe\\workspace\\EOApp\\app"
+        },
+        {
+            "name": "IMkit",
+            "path": "E:\\bishe\\workspace\\EOApp\\IMkit"
+        },
+        {
+            "name": "timeselector",
+            "path": "E:\\bishe\\workspace\\EOApp\\timeselector"
+        },
+        {
+            "name": "library",
+            "path": "E:\\bishe\\workspace\\EOApp\\library"
+        }
+    ],
+    "package": "com.liu.easyoffice",
+    "product_flavor": "",
+    "project_source_sets": {
+        "IMkit": {
+            "main_assets_directory": [
+                "E:\\bishe\\workspace\\EOApp\\IMkit\\src\\release\\assets",
+                "E:\\bishe\\workspace\\EOApp\\IMkit\\src\\main\\assets"
+            ],
+            "main_jniLibs_directory": [
+                "E:\\bishe\\workspace\\EOApp\\IMkit\\src\\release\\jniLibs",
+                "E:\\bishe\\workspace\\EOApp\\IMkit\\src\\main\\libs"
+            ],
+            "main_jni_directory": [
+                "E:\\bishe\\workspace\\EOApp\\IMkit\\src\\release\\jni"
+            ],
+            "main_manifest_path": "E:\\bishe\\workspace\\EOApp\\IMkit\\src\\main\\AndroidManifest.xml",
+            "main_res_directory": [
+                "E:\\bishe\\workspace\\EOApp\\IMkit\\src\\release\\res",
+                "E:\\bishe\\workspace\\EOApp\\IMkit\\src\\main\\res"
+            ],
+            "main_src_directory": [
+                "E:\\bishe\\workspace\\EOApp\\IMkit\\src\\release\\java",
+                "E:\\bishe\\workspace\\EOApp\\IMkit\\src\\main\\java"
+            ]
+        },
+        "app": {
+            "main_assets_directory": [
+                "E:\\bishe\\workspace\\EOApp\\app\\src\\debug\\assets",
+                "E:\\bishe\\workspace\\EOApp\\app\\src\\main\\assets"
+            ],
+            "main_jniLibs_directory": [
+                "E:\\bishe\\workspace\\EOApp\\app\\src\\debug\\jniLibs",
+                "E:\\bishe\\workspace\\EOApp\\app\\libs"
+            ],
+            "main_jni_directory": [
+                "E:\\bishe\\workspace\\EOApp\\app\\src\\debug\\jni",
+                "E:\\bishe\\workspace\\EOApp\\app\\src\\main\\jni"
+            ],
+            "main_manifest_path": "E:\\bishe\\workspace\\EOApp\\app\\src\\main\\AndroidManifest.xml",
+            "main_res_directory": [
+                "E:\\bishe\\workspace\\EOApp\\app\\src\\debug\\res",
+                "E:\\bishe\\workspace\\EOApp\\app\\src\\main\\res"
+            ],
+            "main_src_directory": [
+                "E:\\bishe\\workspace\\EOApp\\app\\src\\debug\\java",
+                "E:\\bishe\\workspace\\EOApp\\app\\src\\main\\java"
+            ]
+        },
+        "library": {
+            "main_assets_directory": [
+                "E:\\bishe\\workspace\\EOApp\\library\\src\\release\\assets",
+                "E:\\bishe\\workspace\\EOApp\\library\\src\\main\\assets"
+            ],
+            "main_jniLibs_directory": [
+                "E:\\bishe\\workspace\\EOApp\\library\\src\\release\\jniLibs",
+                "E:\\bishe\\workspace\\EOApp\\library\\src\\main\\jniLibs"
+            ],
+            "main_jni_directory": [
+                "E:\\bishe\\workspace\\EOApp\\library\\src\\release\\jni",
+                "E:\\bishe\\workspace\\EOApp\\library\\src\\main\\jni"
+            ],
+            "main_manifest_path": "E:\\bishe\\workspace\\EOApp\\library\\src\\main\\AndroidManifest.xml",
+            "main_res_directory": [
+                "E:\\bishe\\workspace\\EOApp\\library\\src\\release\\res",
+                "E:\\bishe\\workspace\\EOApp\\library\\src\\main\\res"
+            ],
+            "main_src_directory": [
+                "E:\\bishe\\workspace\\EOApp\\library\\src\\release\\java",
+                "E:\\bishe\\workspace\\EOApp\\library\\src\\main\\java"
+            ]
+        },
+        "timeselector": {
+            "main_assets_directory": [
+                "E:\\bishe\\workspace\\EOApp\\timeselector\\src\\release\\assets",
+                "E:\\bishe\\workspace\\EOApp\\timeselector\\src\\main\\assets"
+            ],
+            "main_jniLibs_directory": [
+                "E:\\bishe\\workspace\\EOApp\\timeselector\\src\\release\\jniLibs",
+                "E:\\bishe\\workspace\\EOApp\\timeselector\\src\\main\\jniLibs"
+            ],
+            "main_jni_directory": [
+                "E:\\bishe\\workspace\\EOApp\\timeselector\\src\\release\\jni",
+                "E:\\bishe\\workspace\\EOApp\\timeselector\\src\\main\\jni"
+            ],
+            "main_manifest_path": "E:\\bishe\\workspace\\EOApp\\timeselector\\src\\main\\AndroidManifest.xml",
+            "main_res_directory": [
+                "E:\\bishe\\workspace\\EOApp\\timeselector\\src\\release\\res",
+                "E:\\bishe\\workspace\\EOApp\\timeselector\\src\\main\\res"
+            ],
+            "main_src_directory": [
+                "E:\\bishe\\workspace\\EOApp\\timeselector\\src\\release\\java",
+                "E:\\bishe\\workspace\\EOApp\\timeselector\\src\\main\\java"
+            ]
+        }
+    },
+    "project_type": "gradle",
+    "retrolambda": {
+        
+    },
+    "root_dir": "E:\\bishe\\workspace\\EOApp",
+    "sdk_directory": "C:\\softwares\\sdk",
+    "use_jdk8": true,
+    "use_system_gradle": false
+}

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_export_checking_table"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sign_confirm_grey"
+    tools:context="com.liu.easyoffice.Activity.SignExportCheckingTableActivity">
+
+    <include layout="@layout/activity_sign_toolbar"></include>
+
+    <RelativeLayout
+        android:id="@+id/selectConditionRelativelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:background="@color/activity_sign_main_backgroud">
+
+        <RelativeLayout
+            android:id="@+id/beginDateSelectRelativelayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/beginDateTextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:text="开始时间"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/beginDateSelectTextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:text="2016-10-21"
+                android:textColor="@color/green"
+                android:textSize="16sp"/>
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/strip_line1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/beginDateSelectRelativelayout"
+            android:background="#C0C5C7"/>
+
+        <RelativeLayout
+            android:id="@+id/endDateSelectRelativelayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/strip_line1"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/endDateTextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:text="结束时间"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/endDateSelectTextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:text="2016-10-21"
+                android:textColor="@color/green"
+                android:textSize="16sp"/>
+        </RelativeLayout>
+
+
+        <View
+            android:id="@+id/strip_line2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/endDateSelectRelativelayout"
+            android:background="#C0C5C7"/>
+
+
+        <RelativeLayout
+            android:id="@+id/peopleSelectRelativelayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/strip_line2"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/peopleTextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="2dp"
+                android:text="选择查询人群"
+                android:textSize="20dp"/>
+
+            <LinearLayout
+                android:id="@+id/twobutton_linearlayout"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="2dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/wholeButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_hardworking_rankinglist_selector"
+                    android:text="全公司"
+                    />
+
+                <Button
+                    android:id="@+id/singlButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_late_rankinglist_selector"
+                    android:text="员工"
+                    />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/strip_line3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/peopleSelectRelativelayout"
+            android:background="#C0C5C7"/>
+
+        <RelativeLayout
+            android:id="@+id/comployeeSelectRelativelayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/strip_line3"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/comployeeTextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:text="员工"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/comployeeSelectTextview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="3dp"
+                android:layout_marginTop="4dp"
+                android:layout_toLeftOf="@+id/employeeRightSelectImage"
+                android:text="已选择0人"
+                android:textColor="@color/green"
+                android:textSize="16sp"/>
+
+            <ImageView
+                android:id="@+id/employeeRightSelectImage"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/right_point_solid"/>
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/strip_line4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/comployeeSelectRelativelayout"
+            android:background="#C0C5C7"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textTip1"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_above="@+id/dateExportRelativelayout"
+        android:layout_marginBottom="100dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="center_vertical"
+        android:text="1.导出的数据会以Excel形式存储在本地，注意查收！"/>
+
+    <TextView
+        android:id="@+id/textTip2"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_above="@+id/dateExportRelativelayout"
+        android:layout_marginBottom="55dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="center_vertical"
+        android:text="2.将推出导出数据的应用内发送功能，敬请期待！"/>
+
+    <RelativeLayout
+        android:id="@+id/dateExportRelativelayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/activity_sign_main_backgroud"
+        android:gravity="center_vertical">
+
+        <Button
+            android:id="@+id/dataExportButton"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_below="@+id/sign_setting_end1"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:background="@drawable/sign_button_save_shape"
+            android:text="导出"
+            android:textColor="@color/sign_toolbar"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

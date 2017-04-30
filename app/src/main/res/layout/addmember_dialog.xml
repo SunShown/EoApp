@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/addMember_dialog_tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="10dp"
+            android:text="请选择你要添加的成员方式"
+            android:textColor="@color/deep_blue"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/deep_blue" />
+        <TextView
+            android:id="@+id/addmember_dialog_tv_input"
+            style="@style/addMember_dialog_item"
+            android:text="手动输入成员信息" />
+        <TextView
+            android:id="@+id/addmember_dialog_tv_contacts"
+            android:text="从手机通讯录添加"
+            style="@style/addMember_dialog_item"
+            />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_set_chat_group_name"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.liu.easyoffice.Activity.SetChatGroupName">
+    <com.liu.easyoffice.MyView.MyTitleBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:leftImagResource="@mipmap/back"
+        app:text="讨论组名称"
+        >
+        <Button
+            android:id="@+id/tv_confirm"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:textSize="16sp"
+            android:textColor="@android:color/white"
+            android:text="确认"
+            android:background="@drawable/confirm_style"
+            android:layout_width="60dp"
+            android:layout_height="30dp" />
+    </com.liu.easyoffice.MyView.MyTitleBar>
+    <EditText
+        android:maxLength="10"
+        android:id="@+id/et_confirm_name"
+        android:hint="输入新的讨论组名称"
+        android:lines="1"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp" />
+</LinearLayout>

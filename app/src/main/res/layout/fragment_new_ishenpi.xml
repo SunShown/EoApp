@@ -1,0 +1,28 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.liu.easyoffice.Fragment.NewIShenpiFragment"
+    android:background="@color/bg_main"
+    >
+
+    <!-- TODO: Update blank fragment appconfig_father_item -->
+
+
+    <com.liu.easyoffice.MyView.MySearchBar
+        android:id="@+id/sb_sheninew"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></com.liu.easyoffice.MyView.MySearchBar>
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:layout_below="@id/sb_sheninew"
+        android:id="@+id/lv_ishennew"
+
+        ptr:ptrHeaderTextColor="#505050"
+        ptr:ptrDrawable="@mipmap/refresh_ic"
+        ptr:ptrListViewExtrasEnabled="true"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></com.handmark.pulltorefresh.library.PullToRefreshListView>
+
+</RelativeLayout>

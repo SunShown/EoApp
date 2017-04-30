@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_dep_leader"
+    android:orientation="vertical"
+    android:background="@color/grey"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.liu.easyoffice.Activity.ManagerPart.DepLeaderActivity">
+    <com.liu.easyoffice.MyView.MyTitleBar
+        app:leftImagResource="@mipmap/back"
+        app:text="选择部门主管"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </com.liu.easyoffice.MyView.MyTitleBar>
+    <ListView
+
+        android:id="@+id/dep_leader_lv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </ListView>
+    <include
+        android:id="@+id/dep_leader_no_date"
+        layout="@layout/no_date_layout"/>
+    <include
+        android:id="@+id/dep_leader_no_net"
+        layout="@layout/no_net"/>
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/dep_leader_load"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>

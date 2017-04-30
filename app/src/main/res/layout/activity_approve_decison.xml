@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_approve_decison"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#5ccc"
+    tools:context="com.liu.easyoffice.Activity.ApproveDecisonActivity">
+
+    <com.liu.easyoffice.MyView.MyTitleBar
+        android:id="@+id/applyment_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:leftImagResource="@mipmap/back"
+        app:text="审批意见" />
+
+    <EditText
+
+        android:id="@+id/et_appdecision_reason"
+        style="?android:attr/textViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/applyment_title_bar"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_topandunder_line"
+        android:gravity="left|top"
+
+        android:hint="请输入同意理由（非必填）"
+        android:inputType="textMultiLine"
+        android:maxLines="20"
+        android:minLines="8"
+        android:paddingBottom="2dp"
+        android:paddingTop="2dp"
+        android:textColorHint="#CCC"
+        android:textSize="16sp"
+
+
+        />
+
+
+    <RelativeLayout
+        android:id="@+id/rl_decsion_pic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_appdecision_reason"
+        android:layout_marginTop="7dp"
+        android:background="@drawable/shape_topandunder_line"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/add_pic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/applyment_pic_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:text="图片"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/applyment_pic_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:background="@mipmap/applyment_pic_img1" />
+        </RelativeLayout>
+
+        <me.iwf.photopicker.widget.MultiPickResultView
+            android:id="@+id/photo_pick_desicion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/add_pic" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/appdecision_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_decsion_pic"
+        android:layout_marginLeft="30dip"
+        android:layout_marginRight="30dip"
+        android:layout_marginTop="24dip"
+        android:background="@drawable/rp_login_selector"
+        android:text="确定"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+
+</RelativeLayout>
