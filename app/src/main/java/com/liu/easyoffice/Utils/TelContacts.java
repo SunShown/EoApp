@@ -24,23 +24,26 @@ public class TelContacts {
         List<User> users=new ArrayList<>();
         ContentResolver resolver=context.getContentResolver();
         Cursor cursor=resolver.query(ContactsContract.Contacts.CONTENT_URI,null,null,null,null);
-        while (cursor.moveToNext()){
-            User user=new User();
-            int nameIndex=cursor.getColumnIndex(ContactsContract.PhoneLookup.DISPLAY_NAME);
-            String contactName=cursor.getString(nameIndex);
-            user.setUserName(contactName);
-            String contactId=cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts._ID));
-            Cursor phone=resolver.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,null,ContactsContract.CommonDataKinds.Phone.CONTACT_ID+"="+contactId,null,null);
-            while (phone.moveToNext()){
-                String phoneNumber=phone.getString(phone.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
-                phoneNumber=phoneNumber.replace("-","");
-                phoneNumber=phoneNumber.replace(" ","");
-                user.setUserId(phoneNumber);
+        if (cursor != null){
+
+            while (cursor.moveToNext()){
+                User user=new User();
+                int nameIndex=cursor.getColumnIndex(ContactsContract.PhoneLookup.DISPLAY_NAME);
+                String contactName=cursor.getString(nameIndex);
+                user.setUserName(contactName);
+                String contactId=cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts._ID));
+                Cursor phone=resolver.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,null,ContactsContract.CommonDataKinds.Phone.CONTACT_ID+"="+contactId,null,null);
+                while (phone.moveToNext()){
+                    String phoneNumber=phone.getString(phone.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+                    phoneNumber=phoneNumber.replace("-","");
+                    phoneNumber=phoneNumber.replace(" ","");
+                    user.setUserId(phoneNumber);
+                }
+                if(phone!=null&&!phone.isClosed()){
+                    phone.close();
+                }
+                users.add(user);
             }
-            if(phone!=null&&!phone.isClosed()){
-                phone.close();
-            }
-            users.add(user);
         }
         if(cursor!=null&&!cursor.isClosed()){
             cursor.close();

@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.liu.easyoffice.Adapter.CommonAdapter;
 import com.liu.easyoffice.Adapter.ViewHolder;
@@ -188,7 +189,7 @@ public class SearchMember extends Activity {
     }
     public void addMember(final User user, final Button btn, final TextView tv){
         RequestParams param=new RequestParams(Utils.MANAGER_GROUP);
-        Gson gson=new Gson();
+        Gson gson= new GsonBuilder().setDateFormat("yyyy-MM-dd hh:mm:ss.S").create();
         String userJson=gson.toJson(user);
         param.addParameter("addMem",userJson);
         x.http().get(param, new Callback.CommonCallback<String>() {

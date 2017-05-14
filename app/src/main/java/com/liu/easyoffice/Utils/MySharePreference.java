@@ -26,7 +26,7 @@ public class MySharePreference {
         String userId = preferences.getString("userId", "");
         String userName=preferences.getString("userName","");
         String imgUrl=preferences.getString("imgUrl","");
-        String birthday=preferences.getString("userBirth","1992-08-08");
+        String birthday=preferences.getString("userBirth","1992-08-08 00:00:00.0");
         Log.e("birthday", "getCurrentUser: "+birthday );
         Long id=preferences.getLong("id",-1L);
         String address=preferences.getString("userAddress","");

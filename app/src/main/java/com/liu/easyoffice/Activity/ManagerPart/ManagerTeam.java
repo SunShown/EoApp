@@ -17,6 +17,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.liu.easyoffice.Progressbar.LoadDialog;
 import com.liu.easyoffice.R;
 import com.liu.easyoffice.Utils.MySharePreference;
@@ -29,6 +30,8 @@ import com.liu.easyoffice.pojo.User;
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
 import org.xutils.x;
+
+import java.sql.Timestamp;
 
 public class ManagerTeam extends AppCompatActivity implements View.OnClickListener {
 
@@ -92,6 +95,7 @@ public class ManagerTeam extends AppCompatActivity implements View.OnClickListen
         isEdit = getIntent().getBooleanExtra("edit", false);
         if (isMember) {//判断是否是编辑员工信息界面
             editUser = (User) getIntent().getSerializableExtra("user");
+            Log.e("liufeixuan", "initMsg: "+editUser.getBirthday() );
             partNameTitle.setText("姓名");
             etName.setText(editUser.getUserName());
             phoneLayout.setVisibility(View.VISIBLE);
@@ -228,7 +232,10 @@ public class ManagerTeam extends AppCompatActivity implements View.OnClickListen
         String groupMsg = gson.toJson(group);
         if (isDelete) {
             if(isMember){
-                Gson userGson = new Gson();
+
+                Gson userGson = new GsonBuilder().setDateFormat("yyyy-MM-dd hh:mm:ss.S").create();
+//                user.setBirthday(Timestamp.valuseOf("1992-08-06"));
+                Log.e("liufeixuan", "connetToServe: "+user.getBirthday());
                 String userStr = userGson.toJson(user);
                 params.addParameter("editMember", "0");
                 params.addParameter("deleteMember","0");
@@ -242,7 +249,7 @@ public class ManagerTeam extends AppCompatActivity implements View.OnClickListen
             params.addParameter("group", groupMsg);
             if (isMember) {
                 params.addParameter("editMember", "0");
-                Gson userGson = new Gson();
+                Gson userGson = new GsonBuilder().setDateFormat("yyyy-MM-dd hh:mm:ss.S").create();
                 String userStr = userGson.toJson(user);
                 params.addParameter("user", userStr);
             } else if (isEdit) {//是否是编辑页面
