@@ -114,7 +114,7 @@ public class Login2Activity extends AppCompatActivity implements View.OnClickLis
                 LoadDialog.show(mcontext, "正在登录。。。");
 
                 final RequestParams requestParams = new RequestParams(Utils.LOGIN_URL);
-                requestParams.addParameter("userName", "");
+                requestParams.addParameter(" ", "");
                 requestParams.addParameter("userId", id);
                 requestParams.addParameter("userPwd", psd);
                 requestParams.setConnectTimeout(4000);
