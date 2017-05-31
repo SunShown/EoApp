@@ -78,14 +78,14 @@ public class ConversationActivity extends FragmentActivity {
         Uri uri=intent.getData();
         targetId=uri.getQueryParameter("targetId").toString();
         title=uri.getQueryParameter("title").toString();//用户名
-
-        Log.e("targetid", "targetId: "+title );
+        Log.e("liufeixuan", "initMsg: "+targetId);
+        Log.e("targetid", "tel: "+title );
         String chatType=uri.getLastPathSegment();
         Log.e("type", "initMsg: "+chatType );
         if(chatType.equals(DISCUSSION)){
             chatGroupIv.setImageBitmap(BitmapFactory.decodeResource(getResources(),R.mipmap.group_iv));
         }else if(chatType.equals(PRIVATE)){
-//            RongIM.getInstance().refreshUserInfoCache(new UserInfo(targetId,title,null));
+//            RongIM.getInstance().refreshUserInfoCache(new UserInfo(tel,title,null));
             chatGroupIv.setVisibility(View.GONE);
         }
         chatTitle.setText(title);

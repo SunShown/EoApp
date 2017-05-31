@@ -215,6 +215,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void msgInit() {
         SharedPreferences preferences = getApplication().getSharedPreferences("user", MODE_PRIVATE);
         Token = preferences.getString("userToken", null);
+        Log.e("liufeixuan", "msgInit: " +Token);
         userId = preferences.getString("userId", "0");
         name = preferences.getString("userName", "用户不存在");
         portraitUri = preferences.getString("imgUrl", "");

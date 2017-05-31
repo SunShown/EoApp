@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.liu.easyoffice.Adapter.CommonAdapter;
 import com.liu.easyoffice.Adapter.ViewHolder;
+import com.liu.easyoffice.MyView.MyTitleBar;
 import com.liu.easyoffice.R;
 import com.liu.easyoffice.Utils.MySharePreference;
 import com.liu.easyoffice.Utils.ToastCommom;
@@ -47,6 +48,8 @@ public class AllDepActivity extends AppCompatActivity implements View.OnClickLis
     private LinearLayout nonetLayout;
     private Group spGroup;
     private Group currentGroup;
+    private MyTitleBar titleBar;
+    private boolean isMember;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,13 +66,19 @@ public class AllDepActivity extends AppCompatActivity implements View.OnClickLis
         showDeplvFirst = ((ListView) findViewById(R.id.all_dep_lv));//显示当前所有部门
         nodateLayout = ((LinearLayout) findViewById(R.id.all_dep_nodate));
         nonetLayout = ((LinearLayout) findViewById(R.id.all_dep_nonet));
-        addView(null);
+        titleBar = ((MyTitleBar) findViewById(R.id.titleBar));
     }
 
     private void initDate() {
         mContext = this;
         spGroup=MySharePreference.getCurrentCroup(mContext);
+        addView(null);
         currentGroup= (Group) getIntent().getSerializableExtra("currentGroup");
+        isMember = getIntent().getBooleanExtra("isMember",false);
+        if (isMember){
+            //如果是编辑员工调整的界面 则显示所有的部门
+
+        }
         Log.e("currentGroup", "groupName"+currentGroup.getTgName()+" tgId="+currentGroup.getTgId());
         adapter = new CommonAdapter<Group>(mContext, groups, R.layout.show_dep_item) {
             @Override
@@ -82,29 +91,44 @@ public class AllDepActivity extends AppCompatActivity implements View.OnClickLis
                 final RelativeLayout iconLayout = viewHolder.getView(R.id.show_dep_item_rlt_icon);
                 RelativeLayout rightLayout=viewHolder.getView(R.id.show_dep_item_rlt);//点击左边布局
                 groupName.setText(item.getTgName());
-                if(item.getTgId().equals(currentGroup.getTgId())){
-                    Log.e("current", "A组 " );
-                    parentLayout.setBackgroundResource(R.color.grey_bg_choosed);
-                    groupName.setTextColor(Color.WHITE);
-                    parentLayout.setClickable(false);
-                    view.setVisibility(View.GONE);
-                    layout.setVisibility(View.GONE);
-                }else {
+                if (isMember){
                     parentLayout.setBackgroundResource(R.color.white);
                     groupName.setTextColor(Color.BLACK);
                     parentLayout.setClickable(true);
                     view.setVisibility(View.VISIBLE);
                     layout.setVisibility(View.VISIBLE);
+                }else {
+                    if(item.getTgId().equals(currentGroup.getTgId()) ){
+                        Log.e("current", "A组 " );
+                        parentLayout.setBackgroundResource(R.color.grey_bg_choosed);
+                        groupName.setTextColor(Color.WHITE);
+                        parentLayout.setClickable(false);
+                        view.setVisibility(View.GONE);
+                        layout.setVisibility(View.GONE);
+                    }else {
+                        parentLayout.setBackgroundResource(R.color.white);
+                        groupName.setTextColor(Color.BLACK);
+                        parentLayout.setClickable(true);
+                        view.setVisibility(View.VISIBLE);
+                        layout.setVisibility(View.VISIBLE);
+                    }
                 }
                 iconLayout.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if(item.getTgId().equals(currentGroup.getTgId())){
-                            ToastCommom.ToastShow(mContext,null,"不能设置上级部门为该部门以下");
-                        }else {
+                        if (isMember){
                             connectToGetGroup(item.getTgId());
                             setInAnimation(showDeplvFirst);
                             addView(item);
+                        }else {
+
+                            if(item.getTgId().equals(currentGroup.getTgId())){
+                                ToastCommom.ToastShow(mContext,null,"不能设置上级部门为该部门以下");
+                            }else {
+                                connectToGetGroup(item.getTgId());
+                                setInAnimation(showDeplvFirst);
+                                addView(item);
+                            }
                         }
                     }
                 });
@@ -112,14 +136,22 @@ public class AllDepActivity extends AppCompatActivity implements View.OnClickLis
                 rightLayout.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if(item.getTgId().equals(currentGroup.getTgId())){
-                            ToastCommom.ToastShow(mContext,null,"不能设置上级部门为该部门以下");
-                        }else {
+                        if (isMember){
                             Intent intent=new Intent();
                             intent.putExtra("parentGroup",item);
                             AllDepActivity.this.setResult(2,intent);
                             AllDepActivity.this.finish();
+                        }else {
+                            if(item.getTgId().equals(currentGroup.getTgId())){
+                                ToastCommom.ToastShow(mContext,null,"不能设置上级部门为该部门以下");
+                            }else {
+                                Intent intent=new Intent();
+                                intent.putExtra("parentGroup",item);
+                                AllDepActivity.this.setResult(2,intent);
+                                AllDepActivity.this.finish();
+                            }
                         }
+
                     }
                 });
             }
@@ -141,7 +173,7 @@ public class AllDepActivity extends AppCompatActivity implements View.OnClickLis
         if (namesLayout.getChildCount() == 0) {//如果没有任何内容
             gNameTv.setText("首页");
             iv.setVisibility(View.GONE);
-            gidTv.setText("0");
+            gidTv.setText(spGroup.getTgId()+"");
         } else {
             gidTv.setText(group.getTgId() + "");
             gNameTv.setText(group.getTgName());

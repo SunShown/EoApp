@@ -21,8 +21,11 @@ import com.liu.easyoffice.Activity.SignAddressAdjustment;
 import com.liu.easyoffice.Activity.SignWeekAndTimeByAdminActivity;
 import com.liu.easyoffice.R;
 import com.liu.easyoffice.Utils.MySharePreference;
+import com.liu.easyoffice.Utils.ToastCommom;
 import com.liu.easyoffice.Utils.Utils;
 import com.liu.easyoffice.pojo.CompanySignSettingInfo;
+import com.liu.easyoffice.pojo.Group;
+import com.liu.easyoffice.pojo.User;
 
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
@@ -69,7 +72,8 @@ public class SignSettingFragment extends Fragment implements View.OnClickListene
     private RelativeLayout mAddressDetailsRelativelayout;
     private View mStripView6;
     private ImageView mSelectImageview;
-
+    private User currentUser;
+    private Group group;
 
     private double latitudeDouble;  //维度
     private double longitudeDouble;  //经度
@@ -92,6 +96,9 @@ public class SignSettingFragment extends Fragment implements View.OnClickListene
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.activity_sign_setting_fragment, null);
         initViewData();
+        if (currentUser.getId() != group.getTgLeaderId()){
+            mCommitButton.setVisibility(View.GONE);
+        }
         return v;
     }
 
@@ -142,7 +149,8 @@ public class SignSettingFragment extends Fragment implements View.OnClickListene
         mHardworkingRelativelayout.setOnClickListener(this);
         mCommitButton.setOnClickListener(this);
         mNextDayOrWeekRelativelayout.setOnClickListener(this);
-
+        currentUser = MySharePreference.getCurrentUser(getActivity().getApplicationContext());
+        group = MySharePreference.getCurrentCroup(getActivity().getApplicationContext());
         //从服务器上边拿取数据，显示在设置界面
         RequestParams showSettingInfoParams = new RequestParams(Utils.SHOW_SIGNSETTINGINFO);
         showSettingInfoParams.addBodyParameter("companyId", companyId + "");
@@ -222,10 +230,18 @@ public class SignSettingFragment extends Fragment implements View.OnClickListene
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.addaddress_relativelayout:
+                if (currentUser.getId() != group.getTgLeaderId()){
+                    ToastCommom.ToastShow(getActivity().getApplicationContext(),null,"请联系管理员进行设置");
+                    return;
+                }
                 Intent addAddressIntent = new Intent(getActivity().getApplicationContext(), SignAddressAdjustment.class);
                 startActivityForResult(addAddressIntent, 2);
                 break;
             case R.id.select_distance_relativelayout:
+                if (currentUser.getId() != group.getTgLeaderId()){
+                    ToastCommom.ToastShow(getActivity().getApplicationContext(),null,"请联系管理员进行设置");
+                    return;
+                }
                 AlertDialog.Builder builderSelectDistance = new AlertDialog.Builder(getActivity())
                         .setItems(distanceItems, new DialogInterface.OnClickListener() {
                             @Override
@@ -236,6 +252,10 @@ public class SignSettingFragment extends Fragment implements View.OnClickListene
                 builderSelectDistance.create().show();
                 break;
             case R.id.setting_elasticity_time_relativelayout:
+                if (currentUser.getId() != group.getTgLeaderId()){
+                    ToastCommom.ToastShow(getActivity().getApplicationContext(),null,"请联系管理员进行设置");
+                    return;
+                }
                 AlertDialog.Builder builderSelectTimeDuration = new AlertDialog.Builder(getActivity())
                         .setItems(timeSelectItems, new DialogInterface.OnClickListener() {
                             @Override
@@ -256,6 +276,10 @@ public class SignSettingFragment extends Fragment implements View.OnClickListene
 //                builderLateTime.create().show();
 //                break;
             case R.id.setting_ahead_time_relativelayout:
+                if (currentUser.getId() != group.getTgLeaderId()){
+                    ToastCommom.ToastShow(getActivity().getApplicationContext(),null,"请联系管理员进行设置");
+                    return;
+                }
                 AlertDialog.Builder builderAheadTime = new AlertDialog.Builder(getActivity())
                         .setItems(timeSelectItems, new DialogInterface.OnClickListener() {
                             @Override
@@ -266,6 +290,10 @@ public class SignSettingFragment extends Fragment implements View.OnClickListene
                 builderAheadTime.create().show();
                 break;
             case R.id.setting_on_remind_time_relativelayout:
+                if (currentUser.getId() != group.getTgLeaderId()){
+                    ToastCommom.ToastShow(getActivity().getApplicationContext(),null,"请联系管理员进行设置");
+                    return;
+                }
                 AlertDialog.Builder builderOnRemindTime = new AlertDialog.Builder(getActivity())
                         .setItems(timeSelectItems, new DialogInterface.OnClickListener() {
                             @Override
@@ -276,6 +304,10 @@ public class SignSettingFragment extends Fragment implements View.OnClickListene
                 builderOnRemindTime.create().show();
                 break;
             case R.id.setting_off_remind_time_relativelayout:
+                if (currentUser.getId() != group.getTgLeaderId()){
+                    ToastCommom.ToastShow(getActivity().getApplicationContext(),null,"请联系管理员进行设置");
+                    return;
+                }
                 AlertDialog.Builder builderOffRemindTime = new AlertDialog.Builder(getActivity())
                         .setItems(timeSelectItems, new DialogInterface.OnClickListener() {
                             @Override
@@ -286,6 +318,10 @@ public class SignSettingFragment extends Fragment implements View.OnClickListene
                 builderOffRemindTime.create().show();
                 break;
             case R.id.checking_time_relativelayout:
+                if (currentUser.getId() != group.getTgLeaderId()){
+                    ToastCommom.ToastShow(getActivity().getApplicationContext(),null,"请联系管理员进行设置");
+                    return;
+                }
                 Intent mIntent = new Intent(getActivity(), SignWeekAndTimeByAdminActivity.class);
                 mIntent.putExtra("onWeekInfoIntent", deliverOnString);
                 Log.i("haha", "haha" + deliverOnString);
@@ -301,6 +337,10 @@ public class SignSettingFragment extends Fragment implements View.OnClickListene
                 startActivityForResult(mIntent, CHECKINGTIMEREQUEST);
                 break;
             case R.id.hardworking_relativelayout:
+                if (currentUser.getId() != group.getTgLeaderId()){
+                    ToastCommom.ToastShow(getActivity().getApplicationContext(),null,"请联系管理员进行设置");
+                    return;
+                }
                 AlertDialog.Builder builderHardworkingTime = new AlertDialog.Builder(getActivity())
                         .setItems(hardworkingTimes, new DialogInterface.OnClickListener() {
                             @Override
@@ -311,6 +351,10 @@ public class SignSettingFragment extends Fragment implements View.OnClickListene
                 builderHardworkingTime.create().show();
                 break;
             case R.id.nextDayorWeek_relativelayout:
+                if (currentUser.getId() != group.getTgLeaderId()){
+                    ToastCommom.ToastShow(getActivity().getApplicationContext(),null,"请联系管理员进行设置");
+                    return;
+                }
                 if (isNextDayBegin==false) {
                     mAutoNextDayImageView.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.selectedweek));
                     isNextDayBegin = true;

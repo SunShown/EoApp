@@ -29,7 +29,6 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
-
         init();
     }
 
@@ -81,6 +80,5 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
                         .show();
                 break;
         }
-
     }
 }

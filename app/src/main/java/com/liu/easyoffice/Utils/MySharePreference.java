@@ -55,9 +55,11 @@ public class MySharePreference {
         SharedPreferences preferences=context.getSharedPreferences("group", MODE_PRIVATE);
         Long tgId=preferences.getLong("tgId",-1);
         String tgName=preferences.getString("tgName",null);
+        Long tgLeader = preferences.getLong("tgLeader",0L);
         Group group=new Group();
         group.setTgId(tgId);
         group.setTgName(tgName);
+        group.setTgLeaderId(tgLeader);
         return group;
     }
     public static boolean setCurrentUser(Context context,User user){

@@ -106,7 +106,7 @@ public class MyTitleBar extends RelativeLayout {
 
     public void setText(String text) {
         if (titleText != null) {
-            title.setText(titleText);
+            title.setText(text);
             invalidate();
             requestLayout();
         }

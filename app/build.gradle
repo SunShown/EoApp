@@ -41,6 +41,9 @@ android {
 
         }
     }
+    freeline {
+        applicationProxy false
+    }
 
 }
 

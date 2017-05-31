@@ -20,6 +20,11 @@ import com.liu.easyoffice.Activity.ShowMemberActivity;
 import com.liu.easyoffice.Activity.SignMainActivity;
 import com.liu.easyoffice.MyView.MyViewFlipper;
 import com.liu.easyoffice.R;
+import com.liu.easyoffice.Utils.MySharePreference;
+import com.liu.easyoffice.Utils.ToastCommom;
+import com.liu.easyoffice.Utils.Utils;
+import com.liu.easyoffice.pojo.Group;
+import com.liu.easyoffice.pojo.User;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -41,6 +46,8 @@ public class WorkFragment extends Fragment {
     private MyViewFlipper workFlipper;
     private RadioGroup workRg;
     private GridView gridView;
+    private User currentUser;
+    private Group group;
     private int[] imgs = {R.mipmap.advertisement1,R.mipmap.advertisement2,R.mipmap.advertisement4,R.mipmap.advertisement3 };
     private int[] icons = {R.mipmap.icon_qiandao, R.mipmap.icon_rizhi, R.mipmap.icon_shenpi, R.mipmap.icon_team_manager};
     private String[] names = {"签到", "公告", "审批", "团队管理"};
@@ -52,6 +59,8 @@ public class WorkFragment extends Fragment {
         workFlipper = ((MyViewFlipper) view.findViewById(R.id.work_flip));
         workRg = ((RadioGroup) view.findViewById(R.id.work_rg));
         gridView = ((GridView) view.findViewById(R.id.work_grid));
+        currentUser = MySharePreference.getCurrentUser(getActivity().getApplicationContext());
+        group = MySharePreference.getCurrentCroup(getActivity().getApplicationContext());
     }
 
     @Nullable
@@ -111,6 +120,10 @@ public class WorkFragment extends Fragment {
                         break;
 
                     case 3:
+                        if (currentUser.getId() != group.getTgLeaderId()){
+                            ToastCommom.ToastShow(getActivity().getApplicationContext(),null,"你不是管理员不能进行操作");
+                            return;
+                        }
                         intent.setClass(getActivity(), ShowMemberActivity.class);
 //                        Group group=MySharePreference.getCurrentCroup(getActivity());
 //                        group.setTgName(MySharePreference.getCurrentCompany(getActivity()).getTcName());

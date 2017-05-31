@@ -9,6 +9,7 @@
     android:layout_height="match_parent"
     tools:context="com.liu.easyoffice.Activity.ManagerPart.AllDepActivity">
     <com.liu.easyoffice.MyView.MyTitleBar
+        android:id="@+id/titleBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:leftImagResource="@mipmap/back"

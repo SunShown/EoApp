@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
+
+import com.antfortune.freeline.FreelineApplication;
+import com.antfortune.freeline.FreelineCore;
 import com.liu.easyoffice.Activity.MainActivity;
 import com.liu.easyoffice.Service.MyService;
 import com.liu.easyoffice.Utils.MySharePreference;
@@ -27,6 +30,7 @@ public class MyApplication extends Application{
     public void onCreate() {
         super.onCreate();
         instance= (MyApplication) getApplicationContext();
+        FreelineCore.init(this);
         kaiTi=Typeface.createFromAsset(getAssets(),"fonts/kaiti.ttf");//设置字体
         /**
          * 初始化Xutils

@@ -8,7 +8,7 @@ public class Utils {
     //    public static final String URL = "http://192.168.31.198:8080/";    //宿舍服务器
 //    public static final String URL = "http://10.40.5.51:8080/";        //鸡哥服务器
 //    public static final String URL = "http://10.40.5.27:8080/";        //我服务器
-    public static final String URL = "http://192.168.1.108:8080/";     //腾讯服务器
+    public static final String URL = "http://192.168.13.1:8080/";     //腾讯服务器
 
     //public static final String URL="http://10.40.5.54:8080/";
     //public static final String URL_LGY = "http://10.40.5.49:8080/eoproject/";

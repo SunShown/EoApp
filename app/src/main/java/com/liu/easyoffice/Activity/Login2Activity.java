@@ -114,10 +114,11 @@ public class Login2Activity extends AppCompatActivity implements View.OnClickLis
                 LoadDialog.show(mcontext, "正在登录。。。");
 
                 final RequestParams requestParams = new RequestParams(Utils.LOGIN_URL);
-                requestParams.addParameter(" ", "");
+//                requestParams.addParameter(" ", "");
                 requestParams.addParameter("userId", id);
                 requestParams.addParameter("userPwd", psd);
-                requestParams.setConnectTimeout(4000);
+                Log.e("liufeixuan", "onClick: "+Utils.LOGIN_URL+"?userId="+id+"&userPwd="+psd );
+                requestParams.setConnectTimeout(8000);
                 x.http().get(requestParams, new Callback.CommonCallback<String>() {
                     @Override
                     public void onSuccess(String result) {
@@ -293,7 +294,7 @@ public class Login2Activity extends AppCompatActivity implements View.OnClickLis
                 break;
             //注册发送短信验证码
             case R.id.regist_check_sendmessage:
-                //判断手机合法性
+                //判断手机合法性.
                 if (!isMobile(regist_username.getText().toString().trim())) {
                     regist_username.setShakeAnimation();
                     ToastCommom.ToastShow(mcontext, null, "手机号不合法");
@@ -641,6 +642,7 @@ public class Login2Activity extends AppCompatActivity implements View.OnClickLis
                         editor.putLong("tgId", group.getTgId());
                         editor.putString("tgName",group.getTgName());
                         editor.putLong("parentGId",group.getParentTgId());
+                        editor.putLong("tgLeader",group.getTgLeaderId());
                         editor.commit();
                     }
 

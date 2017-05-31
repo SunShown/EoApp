@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.liu.easyoffice.MyView.MyTitleBar;
 import com.liu.easyoffice.Progressbar.LoadDialog;
 import com.liu.easyoffice.R;
 import com.liu.easyoffice.Utils.MySharePreference;
@@ -59,6 +60,7 @@ public class ManagerTeam extends AppCompatActivity implements View.OnClickListen
     private TextView departTitle;
     private User editUser;//编辑用户信息
     private TextView phoneEt;
+    private MyTitleBar myTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +87,7 @@ public class ManagerTeam extends AppCompatActivity implements View.OnClickListen
         phoneLayout = ((RelativeLayout) findViewById(R.id.edit_menmber_phone_layout));//手机号布局
         departTitle = ((TextView) findViewById(R.id.manager_tv_depart_title));
         phoneEt = ((TextView) findViewById(R.id.manager_tv_phone));
+        myTitle = ((MyTitleBar) findViewById(R.id.manager_title));
     }
 
     private void initMsg() {
@@ -101,6 +104,7 @@ public class ManagerTeam extends AppCompatActivity implements View.OnClickListen
             phoneLayout.setVisibility(View.VISIBLE);
             phoneEt.setText(editUser.getUserId());
             departTitle.setText("设置部门");
+            myTitle.setText("编辑员工");
             setLeaderLayout.setVisibility(View.GONE);
             rltDescription.setVisibility(View.GONE);
             editDelete.setText("删除员工");
@@ -109,6 +113,7 @@ public class ManagerTeam extends AppCompatActivity implements View.OnClickListen
         } else if (isEdit) {//如果是编辑页面
             parentId = currentGroup.getParentTgId();
             rltDescription.setVisibility(View.GONE);
+            myTitle.setText("编辑部门");
             setLeaderLayout.setVisibility(View.VISIBLE);
             editDelete.setVisibility(View.VISIBLE);
             etName.setText(parentName);
@@ -119,6 +124,7 @@ public class ManagerTeam extends AppCompatActivity implements View.OnClickListen
             setLeaderLayout.setVisibility(View.GONE);
             editDelete.setVisibility(View.GONE);
             tvParentName.setText(parentName);
+            myTitle.setText("添加子部门");
         }
         lastParentid = parentId;//默认id
         if (etName.getText().toString().trim().equals("")) {
@@ -197,6 +203,7 @@ public class ManagerTeam extends AppCompatActivity implements View.OnClickListen
                 break;
             case R.id.manager_tv_parentName://选择父级部门
                 intent.putExtra("currentGroup", currentGroup);//将当前的部门信息传到选择部门信息的界面(防止选择该部门或者子部门作为父部门)
+                intent.putExtra("isMember",isMember);
                 intent.setClass(ManagerTeam.this, AllDepActivity.class);
                 startActivityForResult(intent, REQUEST_PARENT_GROUP);
                 break;
