@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         initDrawerClickListener();
 //       设置点击左侧菜单侧滑按钮，弹出侧滑菜单
-        toolBar.setTitle("易工作");
+        toolBar.setTitle("类钉钉");
         if (toolBar != null) {
             setSupportActionBar(toolBar);
         }

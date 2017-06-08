@@ -500,7 +500,7 @@
                 android:layout_marginRight="30dip"
                 android:layout_marginTop="24dip"
                 android:background="@drawable/rp_login_selector"
-                android:text="进入易工作"
+                android:text="进入类钉钉"
                 android:textColor="#FFFFFF" />
             <TextView
                 android:id="@+id/confirm_return"

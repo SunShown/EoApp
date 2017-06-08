@@ -23,7 +23,7 @@
         android:layout_below="@id/about_logo"
         android:layout_centerHorizontal="true"
         android:textSize="18sp"
-        android:text="易工作 1.0"/>
+        android:text="类钉钉 1.0"/>
 
     <RelativeLayout
         android:background="@drawable/shape_topandunder_line"
@@ -101,7 +101,7 @@
             android:id="@+id/about_our_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="易工作 v1.0"
+            android:text="类钉钉 v1.0"
             android:textSize="18sp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="25dp"
